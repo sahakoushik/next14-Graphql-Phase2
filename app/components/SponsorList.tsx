@@ -23,11 +23,22 @@ interface SponsorsListProps {
 const SponsorsList: FC<SponsorsListProps> = ({ conferenceData }) => {
   console.log('inside sponsors', conferenceData);
 
-  const removeDuplicates = (array: Sponsor[], property: string): Sponsor[] => {
+  // const removeDuplicates = (array: Sponsor[], property: string): Sponsor[] => {
+  //   let uniqueObjects: { [key: string]: boolean } = {};
+  //   return array.filter((obj) => {
+  //     if (!uniqueObjects[obj[property]]) {
+  //       uniqueObjects[obj[property]] = true;
+  //       return true;
+  //     }
+  //     return false;
+  //   });
+  // };
+  const removeDuplicates = (array: Sponsor[], property: keyof Sponsor): Sponsor[] => {
     let uniqueObjects: { [key: string]: boolean } = {};
     return array.filter((obj) => {
-      if (!uniqueObjects[obj[property]]) {
-        uniqueObjects[obj[property]] = true;
+      const key = obj[property] as string; // Type assertion
+      if (!uniqueObjects[key]) {
+        uniqueObjects[key] = true;
         return true;
       }
       return false;
@@ -37,7 +48,7 @@ const SponsorsList: FC<SponsorsListProps> = ({ conferenceData }) => {
   const getSponsors = (
     conferenceData: ConferenceData[],
     sponsorType: keyof ConferenceData,
-    property: string
+    property: keyof Sponsor
   ): Sponsor[] => {
     const sponsors = conferenceData.flatMap((conference) => conference[sponsorType]);
     return removeDuplicates(sponsors, property);
