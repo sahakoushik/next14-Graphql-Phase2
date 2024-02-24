@@ -1,27 +1,42 @@
-import Image from "next/image";
+import React, { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-const OldTimeline = ({ conferences }) => {
+export interface Conference {
+    id: string;
+    name: string;
+    startDate: string;
+    slogan: string;
+  }
+  
+  interface TimelineProps {
+    conferences: Conference[];
+  }
+const TimeLine: FC<TimelineProps> = ({ conferences }) => {       
   return (
-    <VerticalTimeline>
+    <div className="px-6 lg:px-24 pt-24 bg-[#fff]" id="timeline-section">
+      <div className="font-bold text-5xl text-center p-8 text-[#0A142F]">
+        Conferences
+      </div>
+      <VerticalTimeline>
       {conferences.map((item) => {
         return (
           <React.Fragment key={item.name}>
             <VerticalTimelineElement
               className="vertical-timeline-element--content"
-              contentStyle={{ background: "#F9FAFB", borderRadius: "8px" }}
+              contentStyle={{ background: '#F9FAFB', borderRadius: '8px' }}
               iconStyle={{
-                padding: "12px",
-                background: "#F9FAFB",
-                border: "2px Solid #CDCDCD",
-                borderColor: "#F9FAFB",
+                padding: '12px',
+                background: '#F9FAFB',
+                border: '2px Solid #CDCDCD',
+                borderColor: '#F9FAFB',
               }}
-              lineColor="#CDCDCD"
+              // lineColor="#CDCDCD"
               icon={
                 <Image src="/storm.svg" height={36} width={36} alt="storm" />
               }
@@ -31,7 +46,7 @@ const OldTimeline = ({ conferences }) => {
               visible={true}
             >
               <Link
-                href={"/conference/" + item.id}
+                href={'/conference/' + item.id}
                 className="flex flex-row items-start"
               >
                 <Image
@@ -53,7 +68,7 @@ const OldTimeline = ({ conferences }) => {
         );
       })}
     </VerticalTimeline>
-  );
-};
-
-export default OldTimeline;
+    </div>
+  )
+}
+export default TimeLine

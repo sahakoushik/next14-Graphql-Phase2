@@ -7,8 +7,13 @@ interface ConferenceData {
   bronzeSponsors: Sponsor[];
 }
 
-interface Sponsor {
+export interface Sponsor {
+  __typename: string;
   name: string;
+  image:{
+    __typename: string,
+    url: string
+  }
 }
 
 interface SponsorsListProps {
@@ -42,9 +47,9 @@ const SponsorsList: FC<SponsorsListProps> = ({ conferenceData }) => {
   const silverSponsors = getSponsors(conferenceData, 'silverSponsors', 'name');
   const bronzeSponsors = getSponsors(conferenceData, 'bronzeSponsors', 'name');
 
-  // console.log('Gold Sponsors:', goldSponsors);
-  // console.log('Silver Sponsors:', silverSponsors);
-  // console.log('Bronze Sponsors:', bronzeSponsors);
+  console.log('Gold Sponsors:', goldSponsors);
+  console.log('Silver Sponsors:', silverSponsors);
+  console.log('Bronze Sponsors:', bronzeSponsors);
 
   return (
     <div className='py-[100px] bg-[#F9FAFB] w-full'>
