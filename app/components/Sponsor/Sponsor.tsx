@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import { Sponsor as SponsorType } from './SponsorList';
-interface SponsorProps {
+export interface SponsorProps {
   sponsorList: SponsorType[];
   title: string;
 }

@@ -4,65 +4,6 @@ import Image from 'next/image';
 import Loading from '../conference/[id]/loading';
 import Content from './conferenceDetails/Content';
 import { ConferenceDetailsProps,Type } from '../interfaces/interfaces';
-// export interface ConferenceDetailsProps {
-//     conferenceDetails: {
-//       name: string;
-//       slogan: string;
-//       schedules?: Schedule[];
-//       organizers?: Organizer[];
-//       sponsors?: Sponsor[];
-//       allSpeakers?: Speaker[];
-//     }
-// }
-// interface Type {
-//   id: number;
-//   name: string;
-//   value: string;
-// }
-// export interface Schedule {
-//   day: string;
-//   intervals: Interval[];
-// }
-
-// interface Interval {
-//   sessions: Session[];
-// }
-
-// interface Session {
-//   begin: string;
-//   end: string;
-//   title: string;
-// }
-
-// export interface Organizer {
-//   name: string;
-//   image: {
-//     url: string;
-//   };
-//   about: string;
-// }
-
-// export interface Sponsor {
-//   name: string;
-//   image: {
-//     url: string;
-//   };
-//   about: string;
-// }
-
-// export interface Speaker {
-//   name: string;
-//   image: {
-//     url: string;
-//   };
-//   social: {
-//     twitter: string;
-//     linkedin: string;
-//     dribble: string;
-//     github: string;
-//   };
-//   about: string;
-// }
 
 const ConferenceDetails: React.FC<ConferenceDetailsProps> = ({ conferenceDetails }) =>{
   const [type, setType] = useState<Type[]>([
@@ -87,7 +28,6 @@ const ConferenceDetails: React.FC<ConferenceDetailsProps> = ({ conferenceDetails
 
   return (
     <>
-      {/* {console.log('cd', conferenceDetails)} */}
       <div className="-mt-24 py-48 px-6 md:px-32 bg-white">
         {conferenceDetails ? (
           <>

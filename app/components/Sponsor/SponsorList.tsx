@@ -8,10 +8,8 @@ interface ConferenceData {
 }
 
 export interface Sponsor {
-  __typename: string;
   name: string;
   image:{
-    __typename: string,
     url: string
   }
 }
@@ -21,22 +19,10 @@ interface SponsorsListProps {
 }
 
 const SponsorsList: FC<SponsorsListProps> = ({ conferenceData }) => {
-  console.log('inside sponsors', conferenceData);
-
-  // const removeDuplicates = (array: Sponsor[], property: string): Sponsor[] => {
-  //   let uniqueObjects: { [key: string]: boolean } = {};
-  //   return array.filter((obj) => {
-  //     if (!uniqueObjects[obj[property]]) {
-  //       uniqueObjects[obj[property]] = true;
-  //       return true;
-  //     }
-  //     return false;
-  //   });
-  // };
   const removeDuplicates = (array: Sponsor[], property: keyof Sponsor): Sponsor[] => {
     let uniqueObjects: { [key: string]: boolean } = {};
     return array.filter((obj) => {
-      const key = obj[property] as string; // Type assertion
+      const key = obj[property] as string; 
       if (!uniqueObjects[key]) {
         uniqueObjects[key] = true;
         return true;
@@ -57,10 +43,6 @@ const SponsorsList: FC<SponsorsListProps> = ({ conferenceData }) => {
   const goldSponsors = getSponsors(conferenceData, 'goldSponsors', 'name');
   const silverSponsors = getSponsors(conferenceData, 'silverSponsors', 'name');
   const bronzeSponsors = getSponsors(conferenceData, 'bronzeSponsors', 'name');
-
-  console.log('Gold Sponsors:', goldSponsors);
-  console.log('Silver Sponsors:', silverSponsors);
-  console.log('Bronze Sponsors:', bronzeSponsors);
 
   return (
     <div className='py-[100px] bg-[#F9FAFB] w-full'>

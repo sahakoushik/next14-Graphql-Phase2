@@ -1,14 +1,14 @@
 import React from 'react';
 import { Speaker as SpeakerType } from '../../interfaces/interfaces';
 import ImageLink from '../common/ImageLink';
-
+import Image from 'next/image';
 interface SpeakerProps {
     speaker: SpeakerType;
 }
   
 const Speaker: React.FC<SpeakerProps> = ({ speaker }) => (
     <div key={speaker.name} className="flex flex-row bg-white items-center my-6 rounded">
-        <img
+        <Image
             className="p-4 rounded-lg"
             src={speaker.image.url}
             width={140}

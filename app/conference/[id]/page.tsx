@@ -31,9 +31,7 @@ const ConferenceID: React.FC<Props> = async ({ params }) => {
         }
         if(errors){
             console.error('GraphQL errors:', errors);
-            console.log('errors:', errors);
         }
-        console.log("data", data);
     } catch (error) {
         console.error('Error fetching conference data:', error);
     }

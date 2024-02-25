@@ -13,7 +13,7 @@ interface ContentProps {
 const Content : React.FC<ContentProps> = ({selected, conferenceDetails}) => {
   return (
     <div className="flex-1 bg-[#F9FAFB] p-[52px]">
-                {/* Schedules     */}
+                {/* Schedules*/}
                 {selected === 'schedules' &&
                   conferenceDetails?.schedules?.map((schedule) => {
                     return (
@@ -21,7 +21,7 @@ const Content : React.FC<ContentProps> = ({selected, conferenceDetails}) => {
                     );
                   })}
 
-                {/* organizers */}
+                {/* organizers*/}
                 {selected === 'organizers' &&
                   conferenceDetails?.organizers?.map((organizer) => {
                     return (
@@ -29,7 +29,7 @@ const Content : React.FC<ContentProps> = ({selected, conferenceDetails}) => {
                     );
                   })}
 
-                {/* sponsors  */}
+                {/* sponsors*/}
                 {selected === 'sponsors' &&
                   conferenceDetails?.sponsors?.map((sponsor) => {
                     return (
@@ -37,7 +37,7 @@ const Content : React.FC<ContentProps> = ({selected, conferenceDetails}) => {
                     );
                   })}
 
-                {/* allSpeakers */}
+                {/* allSpeakers*/}
                 {selected === 'allSpeakers' &&
                   conferenceDetails?.allSpeakers?.map((speaker) => {
                     return (

@@ -12,9 +12,12 @@ const HeroSection = () => {
             Conference
           </span>
         </div>
-        <img
+        <Image
+          width={942}
+          height={834}
           className="absolute -z-50 top-[6%] left-[25%] lg:left-[38%] xl:left-[45%]"
           src="/dotline.svg"
+          alt="dotline"
         />
         <div className="md:w-[515px] xl:w[485] 2xl:[515px] pt-8 text-md md:text-lg md:-ml-[120px]">
           Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id
@@ -34,10 +37,12 @@ const HeroSection = () => {
 
       <div className="flex flex-col-reverse lg:flex-row justify-evenly z-[111] pb-20">
         <div className="ml-6 lg:ml-0 mr-0 lg:mr-80 mt-8 lg:-mt-32 relative">
-          <img
-            className="w-auto h-auto lg:w-[70%] lg:h-[70%] lg:mt-36 xl:w-[90%] xl:h-[90%] xl:mt-24 2xl:mt-0 2xl:w-auto 2xl:h-auto"
+          <Image
             src="/hero1.svg"
             alt="static image"
+            width={330}
+            height={420}
+            className="w-auto h-auto lg:w-[70%] lg:h-[70%] lg:mt-36 xl:w-[90%] xl:h-[90%] xl:mt-24 2xl:mt-0 2xl:w-auto 2xl:h-auto"
           />
           <Image
             width={189}
@@ -48,14 +53,16 @@ const HeroSection = () => {
           />
         </div>
         <div className="m-auto lg:m-0 lg:-mr-28 my-8 lg:-mt-64 relative">
-          <img
-            className="w-auto h-auto lg:w-[70%] lg:h-[70%] lg:mt-36 xl:w-[90%] xl:h-[90%] xl:mt-24 2xl:mt-0 2xl:w-auto 2xl:h-auto"
+          <Image
             src="/hero2.svg"
             alt="static image"
+            width={550}
+            height={560}
+            className="w-auto h-auto lg:w-[70%] lg:h-[70%] lg:mt-36 xl:w-[90%] xl:h-[90%] xl:mt-24 2xl:mt-0 2xl:w-auto 2xl:h-auto"
           />
-          <img
-            width={131}
-            height={131}
+          <Image
+            width={125}
+            height={124}
             className="absolute -bottom-[70px] right-[-58px] lg:-left-[58px] "
             src="/star.svg"
             alt="star"
