@@ -1,5 +1,5 @@
 "use client"
-import React, { FC } from "react";
+import React from "react";
 import Link from "next/link";
 import TimeLine from "./TimeLine";
 export interface Conference {
@@ -12,7 +12,7 @@ export interface Conference {
   interface TimelineProps {
     conferences: Conference[];
   }
-const TimeLineWrapper: FC<TimelineProps> = ({ conferences }) => {    
+const TimeLineWrapper: React.FC<TimelineProps> = ({ conferences }) => {    
   return (
     <TimeLine conferences={conferences}/>
   )

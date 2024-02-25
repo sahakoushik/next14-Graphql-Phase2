@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Sponsor from './Sponsor';
 
 interface ConferenceData {
@@ -18,7 +18,7 @@ interface SponsorsListProps {
   conferenceData: ConferenceData[];
 }
 
-const SponsorsList: FC<SponsorsListProps> = ({ conferenceData }) => {
+const SponsorsList: React.FC<SponsorsListProps> = ({ conferenceData }) => {
   const removeDuplicates = (array: Sponsor[], property: keyof Sponsor): Sponsor[] => {
     let uniqueObjects: { [key: string]: boolean } = {};
     return array.filter((obj) => {

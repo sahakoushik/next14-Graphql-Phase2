@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -7,7 +7,7 @@ interface ImageLinkProps {
   icon: string;
 }
 
-const ImageLink: FC<ImageLinkProps> = ({ link, icon }) => {
+const ImageLink: React.FC<ImageLinkProps> = ({ link, icon }) => {
   return (
     <Link href={link ? link : ""}>
       {icon === "twitter" ?

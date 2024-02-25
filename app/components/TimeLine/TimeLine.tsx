@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -17,7 +17,7 @@ export interface Conference {
   interface TimelineProps {
     conferences: Conference[];
   }
-const TimeLine: FC<TimelineProps> = ({ conferences }) => {       
+const TimeLine: React.FC<TimelineProps> = ({ conferences }) => {       
   return (
     <div className="px-6 lg:px-24 pt-24 bg-[#fff]" id="timeline-section">
       <div className="font-bold text-5xl text-center p-8 text-[#0A142F]">

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { Sponsor as SponsorType } from './SponsorList';
 export interface SponsorProps {
@@ -6,7 +6,7 @@ export interface SponsorProps {
   title: string;
 }
 
-const Sponsor: FC<SponsorProps> = ({ sponsorList, title }) => {
+const Sponsor: React.FC<SponsorProps> = ({ sponsorList, title }) => {
   return (
     <div>
       <div className='text-[#667085] text-center my-8'>{title}</div>
